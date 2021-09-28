@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 1",
+	"properties": {
+		"content": {
+			"query": "\ndrop table [dbo].[Orders]\nCREATE TABLE [dbo].[Orders] ([OrderID] [int] NOT NULL,\n[CustomerID] [int] NOT NULL,  [OrderDate] [date] NOT NULL ) WITH\n(  DISTRIBUTION = ROUND_ROBIN,  CLUSTERED COLUMNSTORE INDEX )\nGO\n\n\nselect top 10 * from dbo.orders",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "AJSynpaseSqlPool",
+				"poolName": "AJSynpaseSqlPool"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
